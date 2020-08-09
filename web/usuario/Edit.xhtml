@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
@@ -16,19 +17,25 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.EditUsuarioLabel_idUsuario}" for="idUsuario" />
-                    <h:inputText id="idUsuario" value="#{usuarioController.selected.idUsuario}" title="#{bundle.EditUsuarioTitle_idUsuario}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_idUsuario}"/>
+                    <p:inputText id="idUsuario" value="#{usuarioController.selected.idUsuario}" title="#{bundle.EditUsuarioTitle_idUsuario}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_idUsuario}"/>
+                    
                     <h:outputLabel value="#{bundle.EditUsuarioLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{usuarioController.selected.nombre}" title="#{bundle.EditUsuarioTitle_nombre}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_nombre}"/>
+                    <p:inputText id="nombre" value="#{usuarioController.selected.nombre}" title="#{bundle.EditUsuarioTitle_nombre}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_nombre}"/>
+                    
                     <h:outputLabel value="#{bundle.EditUsuarioLabel_apellido}" for="apellido" />
-                    <h:inputText id="apellido" value="#{usuarioController.selected.apellido}" title="#{bundle.EditUsuarioTitle_apellido}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_apellido}"/>
+                    <p:inputText id="apellido" value="#{usuarioController.selected.apellido}" title="#{bundle.EditUsuarioTitle_apellido}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_apellido}"/>
+                    
                     <h:outputLabel value="#{bundle.EditUsuarioLabel_edad}" for="edad" />
-                    <h:inputText id="edad" value="#{usuarioController.selected.edad}" title="#{bundle.EditUsuarioTitle_edad}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_edad}"/>
+                    <p:inputText id="edad" value="#{usuarioController.selected.edad}" title="#{bundle.EditUsuarioTitle_edad}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_edad}"/>
+                    
                     <h:outputLabel value="#{bundle.EditUsuarioLabel_dui}" for="dui" />
-                    <h:inputText id="dui" value="#{usuarioController.selected.dui}" title="#{bundle.EditUsuarioTitle_dui}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_dui}"/>
+                    <p:inputText id="dui" value="#{usuarioController.selected.dui}" title="#{bundle.EditUsuarioTitle_dui}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_dui}"/>
+                    
                     <h:outputLabel value="#{bundle.EditUsuarioLabel_ciudad}" for="ciudad" />
-                    <h:inputText id="ciudad" value="#{usuarioController.selected.ciudad}" title="#{bundle.EditUsuarioTitle_ciudad}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_ciudad}"/>
+                    <p:inputText id="ciudad" value="#{usuarioController.selected.ciudad}" title="#{bundle.EditUsuarioTitle_ciudad}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_ciudad}"/>
+                    
                     <h:outputLabel value="#{bundle.EditUsuarioLabel_domicilio}" for="domicilio" />
-                    <h:inputText id="domicilio" value="#{usuarioController.selected.domicilio}" title="#{bundle.EditUsuarioTitle_domicilio}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_domicilio}"/>
+                    <p:inputText id="domicilio" value="#{usuarioController.selected.domicilio}" title="#{bundle.EditUsuarioTitle_domicilio}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_domicilio}"/>
                 </h:panelGrid>
                 <h:commandLink action="#{usuarioController.update}" value="#{bundle.EditUsuarioSaveLink}"/>
                 <br />

@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
@@ -16,19 +17,25 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.CreateLibroLabel_isbn}" for="isbn" />
-                    <h:inputText id="isbn" value="#{libroController.selected.isbn}" title="#{bundle.CreateLibroTitle_isbn}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_isbn}"/>
+                    <p:inputText id="isbn" value="#{libroController.selected.isbn}" title="#{bundle.CreateLibroTitle_isbn}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_isbn}"/>
+                    
                     <h:outputLabel value="#{bundle.CreateLibroLabel_nombreLibro}" for="nombreLibro" />
-                    <h:inputText id="nombreLibro" value="#{libroController.selected.nombreLibro}" title="#{bundle.CreateLibroTitle_nombreLibro}" />
+                    <p:inputText id="nombreLibro" value="#{libroController.selected.nombreLibro}" title="#{bundle.CreateLibroTitle_nombreLibro}" />
+                    
                     <h:outputLabel value="#{bundle.CreateLibroLabel_editorial}" for="editorial" />
-                    <h:inputText id="editorial" value="#{libroController.selected.editorial}" title="#{bundle.CreateLibroTitle_editorial}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_editorial}"/>
+                    <p:inputText id="editorial" value="#{libroController.selected.editorial}" title="#{bundle.CreateLibroTitle_editorial}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_editorial}"/>
+                    
                     <h:outputLabel value="#{bundle.CreateLibroLabel_autor}" for="autor" />
-                    <h:inputText id="autor" value="#{libroController.selected.autor}" title="#{bundle.CreateLibroTitle_autor}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_autor}"/>
+                    <p:inputText id="autor" value="#{libroController.selected.autor}" title="#{bundle.CreateLibroTitle_autor}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_autor}"/>
+                    
                     <h:outputLabel value="#{bundle.CreateLibroLabel_genero}" for="genero" />
-                    <h:inputText id="genero" value="#{libroController.selected.genero}" title="#{bundle.CreateLibroTitle_genero}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_genero}"/>
+                    <p:inputText id="genero" value="#{libroController.selected.genero}" title="#{bundle.CreateLibroTitle_genero}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_genero}"/>
+                    
                     <h:outputLabel value="#{bundle.CreateLibroLabel_numeroPaginas}" for="numeroPaginas" />
-                    <h:inputText id="numeroPaginas" value="#{libroController.selected.numeroPaginas}" title="#{bundle.CreateLibroTitle_numeroPaginas}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_numeroPaginas}"/>
+                    <p:inputText id="numeroPaginas" value="#{libroController.selected.numeroPaginas}" title="#{bundle.CreateLibroTitle_numeroPaginas}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_numeroPaginas}"/>
+                    
                     <h:outputLabel value="#{bundle.CreateLibroLabel_precio}" for="precio" />
-                    <h:inputText id="precio" value="#{libroController.selected.precio}" title="#{bundle.CreateLibroTitle_precio}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_precio}"/>
+                    <p:inputText id="precio" value="#{libroController.selected.precio}" title="#{bundle.CreateLibroTitle_precio}" required="true" requiredMessage="#{bundle.CreateLibroRequiredMessage_precio}"/>
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{libroController.create}" value="#{bundle.CreateLibroSaveLink}" />

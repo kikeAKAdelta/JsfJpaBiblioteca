@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
@@ -16,19 +17,25 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputLabel value="#{bundle.EditLibroLabel_isbn}" for="isbn" />
-                    <h:inputText id="isbn" value="#{libroController.selected.isbn}" title="#{bundle.EditLibroTitle_isbn}" required="true" requiredMessage="#{bundle.EditLibroRequiredMessage_isbn}"/>
+                    <p:inputText id="isbn" value="#{libroController.selected.isbn}" title="#{bundle.EditLibroTitle_isbn}" required="true" requiredMessage="#{bundle.EditLibroRequiredMessage_isbn}"/>
+                    
                     <h:outputLabel value="#{bundle.EditLibroLabel_nombreLibro}" for="nombreLibro" />
-                    <h:inputText id="nombreLibro" value="#{libroController.selected.nombreLibro}" title="#{bundle.EditLibroTitle_nombreLibro}" />
+                    <p:inputText id="nombreLibro" value="#{libroController.selected.nombreLibro}" title="#{bundle.EditLibroTitle_nombreLibro}" />
+                    
                     <h:outputLabel value="#{bundle.EditLibroLabel_editorial}" for="editorial" />
-                    <h:inputText id="editorial" value="#{libroController.selected.editorial}" title="#{bundle.EditLibroTitle_editorial}" required="true" requiredMessage="#{bundle.EditLibroRequiredMessage_editorial}"/>
+                    <p:inputText id="editorial" value="#{libroController.selected.editorial}" title="#{bundle.EditLibroTitle_editorial}" required="true" requiredMessage="#{bundle.EditLibroRequiredMessage_editorial}"/>
+                    
                     <h:outputLabel value="#{bundle.EditLibroLabel_autor}" for="autor" />
-                    <h:inputText id="autor" value="#{libroController.selected.autor}" title="#{bundle.EditLibroTitle_autor}" required="true" requiredMessage="#{bundle.EditLibroRequiredMessage_autor}"/>
+                    <p:inputText id="autor" value="#{libroController.selected.autor}" title="#{bundle.EditLibroTitle_autor}" required="true" requiredMessage="#{bundle.EditLibroRequiredMessage_autor}"/>
+                    
                     <h:outputLabel value="#{bundle.EditLibroLabel_genero}" for="genero" />
-                    <h:inputText id="genero" value="#{libroController.selected.genero}" title="#{bundle.EditLibroTitle_genero}" required="true" requiredMessage="#{bundle.EditLibroRequiredMessage_genero}"/>
+                    <p:inputText id="genero" value="#{libroController.selected.genero}" title="#{bundle.EditLibroTitle_genero}" required="true" requiredMessage="#{bundle.EditLibroRequiredMessage_genero}"/>
+                    
                     <h:outputLabel value="#{bundle.EditLibroLabel_numeroPaginas}" for="numeroPaginas" />
-                    <h:inputText id="numeroPaginas" value="#{libroController.selected.numeroPaginas}" title="#{bundle.EditLibroTitle_numeroPaginas}" required="true" requiredMessage="#{bundle.EditLibroRequiredMessage_numeroPaginas}"/>
+                    <p:inputText id="numeroPaginas" value="#{libroController.selected.numeroPaginas}" title="#{bundle.EditLibroTitle_numeroPaginas}" required="true" requiredMessage="#{bundle.EditLibroRequiredMessage_numeroPaginas}"/>
+                    
                     <h:outputLabel value="#{bundle.EditLibroLabel_precio}" for="precio" />
-                    <h:inputText id="precio" value="#{libroController.selected.precio}" title="#{bundle.EditLibroTitle_precio}" required="true" requiredMessage="#{bundle.EditLibroRequiredMessage_precio}"/>
+                    <p:inputText id="precio" value="#{libroController.selected.precio}" title="#{bundle.EditLibroTitle_precio}" required="true" requiredMessage="#{bundle.EditLibroRequiredMessage_precio}"/>
                 </h:panelGrid>
                 <h:commandLink action="#{libroController.update}" value="#{bundle.EditLibroSaveLink}"/>
                 <br />

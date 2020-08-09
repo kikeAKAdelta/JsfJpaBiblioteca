@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
@@ -11,6 +12,13 @@
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
+                
+                <p:breadCrumb>
+                <p:menuitem value="Home" url="/faces/index.xhtml" />
+                <p:menuitem value="Libros" url="/faces/libro/List.xhtml" />
+                <p:menuitem value="Usuarios" url="/faces/usuario/List.xhtml" />
+                <p:menuitem value="Prestamos" url="/faces/prestamo/List.xhtml" />
+             </p:breadCrumb>
                 <h:panelGroup id="messagePanel" layout="block">
                     <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
                 </h:panelGroup>
@@ -19,60 +27,60 @@
                     <h:outputText value="#{libroController.pagination.pageFirstItem + 1}..#{libroController.pagination.pageLastItem + 1}/#{libroController.pagination.itemsCount}"/>&nbsp;
                     <h:commandLink action="#{libroController.previous}" value="#{bundle.Previous} #{libroController.pagination.pageSize}" rendered="#{libroController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink action="#{libroController.next}" value="#{bundle.Next} #{libroController.pagination.pageSize}" rendered="#{libroController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{libroController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                        <h:column>
+                    <p:dataTable value="#{libroController.items}" var="item"  style="border:solid 1px">
+                        <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListLibroTitle_isbn}"/>
                             </f:facet>
                             <h:outputText value="#{item.isbn}"/>
-                        </h:column>
-                        <h:column>
+                        </p:column>
+                        <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListLibroTitle_nombreLibro}"/>
                             </f:facet>
                             <h:outputText value="#{item.nombreLibro}"/>
-                        </h:column>
-                        <h:column>
+                        </p:column>
+                        <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListLibroTitle_editorial}"/>
                             </f:facet>
                             <h:outputText value="#{item.editorial}"/>
-                        </h:column>
-                        <h:column>
+                        </p:column>
+                        <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListLibroTitle_autor}"/>
                             </f:facet>
                             <h:outputText value="#{item.autor}"/>
-                        </h:column>
-                        <h:column>
+                        </p:column>
+                        <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListLibroTitle_genero}"/>
                             </f:facet>
                             <h:outputText value="#{item.genero}"/>
-                        </h:column>
-                        <h:column>
+                        </p:column>
+                        <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListLibroTitle_numeroPaginas}"/>
                             </f:facet>
                             <h:outputText value="#{item.numeroPaginas}"/>
-                        </h:column>
-                        <h:column>
+                        </p:column>
+                        <p:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListLibroTitle_precio}"/>
                             </f:facet>
                             <h:outputText value="#{item.precio}"/>
-                        </h:column>
-                        <h:column>
+                        </p:column>
+                        <p:column>
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{libroController.prepareView}" value="#{bundle.ListLibroViewLink}"/>
+                            <p:commandLink action="#{libroController.prepareView}" value="#{bundle.ListLibroViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{libroController.prepareEdit}" value="#{bundle.ListLibroEditLink}"/>
+                            <p:commandLink action="#{libroController.prepareEdit}" value="#{bundle.ListLibroEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{libroController.destroy}" value="#{bundle.ListLibroDestroyLink}"/>
-                        </h:column>
-                    </h:dataTable>
+                            <p:commandLink action="#{libroController.destroy}" value="#{bundle.ListLibroDestroyLink}"/>
+                        </p:column>
+                    </p:dataTable>
                 </h:panelGroup>
                 <br />
                 <h:commandLink action="#{libroController.prepareCreate}" value="#{bundle.ListLibroCreateLink}"/>

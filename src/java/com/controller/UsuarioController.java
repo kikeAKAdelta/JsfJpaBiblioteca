@@ -6,6 +6,8 @@ import com.controller.util.PaginationHelper;
 import com.session.UsuarioFacade;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -187,6 +189,10 @@ public class UsuarioController implements Serializable {
     public SelectItem[] getItemsAvailableSelectOne() {
         return JsfUtil.getSelectItems(ejbFacade.findAll(), true);
     }
+    
+    public Usuario getUsuarios(){
+        return getUsuario(0);
+    } 
 
     public Usuario getUsuario(java.lang.Integer id) {
         return ejbFacade.find(id);

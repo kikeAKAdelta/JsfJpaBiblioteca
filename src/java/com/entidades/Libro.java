@@ -174,7 +174,7 @@ public class Libro implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entidades.Libro[ isbn=" + isbn + " ]";
+        return ""+ isbn;
     }
     
 }

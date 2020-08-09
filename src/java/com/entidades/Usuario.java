@@ -177,7 +177,7 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "com.entidades.Usuario[ idUsuario=" + idUsuario + " ]";
+        return ""+idUsuario;
     }
     
 }
